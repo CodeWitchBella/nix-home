@@ -47,6 +47,7 @@ in
   programs.direnv.enable = true;
   programs.eza.enable = true;
   programs.bat.enable = true;
+  programs.git.enable = true;
   programs.jujutsu = {
     enable = true;
     settings = {
