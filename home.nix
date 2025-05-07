@@ -24,6 +24,7 @@ in
     enable = true;
     extensions = ["nix"];
     package = config.lib.nixGL.wrap pkgs.zed-editor;
+    extraPackages = [ pkgs.nixd ];
     userSettings = {
       features = {
         copilot = false;
