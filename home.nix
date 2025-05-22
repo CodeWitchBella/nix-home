@@ -48,7 +48,11 @@ in
   programs.direnv.enable = true;
   programs.eza.enable = true;
   programs.bat.enable = true;
-  programs.git.enable = true;
+  programs.git = {
+    enable = true;
+    userName = "Isabella Skořepová";
+    userEmail = "isabella@skorepova.info";
+  };
   programs.jujutsu = {
     enable = true;
     settings = {
