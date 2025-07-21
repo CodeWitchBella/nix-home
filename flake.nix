@@ -23,6 +23,8 @@
       };
     in
     {
+      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
+
       homeConfigurations."isabella" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
