@@ -42,7 +42,10 @@ in
     enable = true;
     defaultEditor = true;
   };
-  programs.fish.enable = true;
+  programs.fish = {
+    enable = true;
+    shellInit = ''source "$HOME/.cargo/env.fish"'';
+  };
   programs.zoxide = fishy;
   programs.atuin = fishy;
   programs.direnv.enable = true;
