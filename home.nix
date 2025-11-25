@@ -44,7 +44,13 @@ in
   };
   programs.fish = {
     enable = true;
-    shellInit = ''source "$HOME/.cargo/env.fish"'';
+    shellInitLast = ''
+      source "$HOME/.cargo/env.fish"
+      set -gx PNPM_HOME "/home/isabella/.local/share/pnpm"
+      if not string match -q -- $PNPM_HOME $PATH
+        set -gx PATH "$PNPM_HOME" $PATH
+      end
+    '';
   };
   programs.zoxide = fishy;
   programs.atuin = fishy;
