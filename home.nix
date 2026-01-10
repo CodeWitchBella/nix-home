@@ -20,23 +20,23 @@ in
   # release notes.
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
-  programs.zed-editor = {
-    enable = true;
-    extensions = [ "nix" ];
-    package = config.lib.nixGL.wrap pkgs.zed-editor;
-    extraPackages = [ pkgs.nixd ];
-    userSettings = {
-      features = {
-        copilot = false;
-      };
-      telemetry = {
-        metrics = false;
-      };
-      vim_mode = false;
-      ui_font_size = 16;
-      buffer_font_size = 16;
-    };
-  };
+  # programs.zed-editor = {
+  #   enable = true;
+  #   extensions = [ "nix" ];
+  #   package = config.lib.nixGL.wrap pkgs.zed-editor;
+  #   extraPackages = [ pkgs.nixd ];
+  #   userSettings = {
+  #     features = {
+  #       copilot = false;
+  #     };
+  #     telemetry = {
+  #       metrics = false;
+  #     };
+  #     vim_mode = false;
+  #     ui_font_size = 16;
+  #     buffer_font_size = 16;
+  #   };
+  # };
   programs.htop.enable = true;
   programs.vim = {
     enable = true;
@@ -155,11 +155,6 @@ in
   # environment.
   home.packages = with pkgs; [
     fend
-    nixgl.nixGLIntel # It's actually mesa...
-    # (config.lib.nixGL.wrap pkgs.gg-jj)
-    (pkgs.writeShellScriptBin "nixGL" ''
-      exec nixGLIntel $@
-    '')
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
