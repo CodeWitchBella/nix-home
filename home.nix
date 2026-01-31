@@ -57,12 +57,15 @@ in
   programs.direnv.enable = true;
   programs.eza.enable = true;
   programs.bat.enable = true;
+  programs.ssh.matchBlocks."vps.isbl.cz".port = 222;
   programs.git = {
     enable = true;
-    userName = "Isabella Skořepová";
-    userEmail = "isabella@skorepova.info";
     lfs.enable = true;
-    extraConfig = {
+    settings = {
+      user = {
+        name = "Isabella Skořepová";
+        email = "isabella@skorepova.info";
+      };
       init.defaultBranch = "main";
       push.autoSetupRemote = true;
       submodule.recurse = "true";
